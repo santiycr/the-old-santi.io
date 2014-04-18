@@ -1,7 +1,7 @@
 
 .site-wrapper {
   background: #111; /* Old browsers */
-  background-image: url("/assets/images/main-bg.jpg"),
+  background-image: url("/static/images/main-bg.jpg"),
                     linear-gradient(to right,
                                     black 0%,
                                     #333 30%,
