@@ -1,0 +1,38 @@
+
+.site-wrapper {
+  background: #111; /* Old browsers */
+  background-image: url("/assets/images/main-bg.jpg"),
+                    linear-gradient(to right,
+                                    black 0%,
+                                    #333 30%,
+                                    #333 70%,
+                                    black 100%);
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center top;
+}
+
+@media (min-width: 768px) {
+  .site-wrapper {
+    background-size: contain, auto;
+    background-repeat: no-repeat;
+    background-position: center 10%;
+  }
+}
+
+@media (min-width: 992px) {
+  .site-wrapper {
+    background-size: 75% auto, auto;
+    background-repeat: no-repeat;
+    background-position: center 10%;
+  }
+}
+
+@media (min-width: 1200px) {
+  .site-wrapper {
+    background-size: 60% auto, auto;
+    background-repeat: no-repeat;
+    background-position: center 20%;
+  }
+}
+
