@@ -38,9 +38,9 @@
             <div class="inner">
               <h3 class="masthead-brand">Santiago Suarez Ordo&ntilde;ez</h3>
               <ul class="nav masthead-nav">
-                <li class="active"><a href="#">About</a></li>
-                <li><a href="#">Work</a></li>
-                <li><a href="#">Contact</a></li>
+                {% for name in ['about', 'work', 'contact']: %}
+                  <li><a href="/{{ name }}">{{ name.capitalize() }}</a></li>
+                {% endfor %}
               </ul>
             </div>
           </div>
