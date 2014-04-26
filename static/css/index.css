@@ -36,3 +36,15 @@
   }
 }
 
+.cover {
+  background-color: hsla(300, 20%, 6%, 0.4);
+  padding: 15px;
+  display: inline-block;
+  float: left;
+  border-radius: 7px;
+  text-align: left;
+}
+
+.lead {
+  font-size: 1.9em;
+}
