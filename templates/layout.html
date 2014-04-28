@@ -39,7 +39,9 @@
               <h2 class="masthead-brand">Santiago Suarez Ordo&ntilde;ez</h2>
               <ul class="nav masthead-nav">
                 {% for name in ['about', 'work', 'contact']: %}
-                  <li><a href="/{{ name }}">{{ name.capitalize() }}</a></li>
+                  <li {{ 'class=active' if request.path.endswith(name) else '' }}>
+                    <a href="/{{ name }}">{{ name.capitalize() }}</a>
+                  </li>
                 {% endfor %}
               </ul>
             </div>
