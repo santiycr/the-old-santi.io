@@ -1,0 +1,47 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <link href="static/css/index.css" rel="stylesheet">
+  <style>
+    .inner form {
+      width: 330px;
+    }
+  </style>
+  <script src="//code.jquery.com/jquery-2.1.1.min.js"></script>
+{% endblock %}
+
+{% block content %}
+  <div class="inner cover">
+  <form role="form">
+    <div class="form-group">
+      <label for="inputEmail">Email address</label>
+      <input type="email" class="form-control" id="inputEmail1" placeholder="Your email">
+    </div>
+    <div class="form-group">
+      <label for="inputMessage">Message</label>
+      <textarea class="form-control" id="inputMessage" placeholder="Your message" rows=3></textarea>
+    </div>
+    <div class="form-group">
+      <div class="col-sm-8">
+        <button type="submit" class="btn btn-default">Submit</button>
+      </div>
+      <div class="col-sm-4">
+        <p id="charCount" class="form-control-static"></p>
+      </div>
+    </div>
+  </form>
+  </div>
+  <script>
+  $(function(){
+    var text_max = 500;
+    $('#charCount').html(text_max + ' left');
+
+    $('#inputMessage').keyup(function() {
+        var text_length = $('#inputMessage').val().length;
+        var text_remaining = text_max - text_length;
+
+        $('#charCount').html(text_remaining + ' left');
+    });
+  })
+  </script>
+{% endblock %}
