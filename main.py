@@ -8,7 +8,8 @@ app = Flask(__name__)
 
 @app.route('/contact', methods=['POST'])
 def contact():
-    mail.send_mail(sender=request.form['email'],
+    mail.send_mail(sender='santi-io@appspot.gserviceaccount.com',
+                   reply_to=request.form['email'],
                    to="santiycr@gmail.com",
                    subject="Contact from santi.io",
                    body=request.form['message'])
