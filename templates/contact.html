@@ -15,7 +15,7 @@
   <form role="form">
     <div class="form-group">
       <label for="inputEmail">Email address</label>
-      <input type="email" class="form-control" id="inputEmail1" placeholder="Your email">
+      <input type="email" class="form-control" id="inputEmail" placeholder="Your email">
     </div>
     <div class="form-group">
       <label for="inputMessage">Message</label>
@@ -23,7 +23,7 @@
     </div>
     <div class="form-group">
       <div class="col-sm-8">
-        <button type="submit" class="btn btn-default">Submit</button>
+        <button type="submit" class="btn btn-default" id="submit">Submit</button>
       </div>
       <div class="col-sm-4">
         <p id="charCount" class="form-control-static"></p>
@@ -32,16 +32,38 @@
   </form>
   </div>
   <script>
-  $(function(){
-    var text_max = 500;
-    $('#charCount').html(text_max + ' left');
+function inform(message) {
+  alert(message);
+}
+$(function(){
+  var text_max = 500;
+  $('#charCount').html(text_max + ' left');
 
-    $('#inputMessage').keyup(function() {
-        var text_length = $('#inputMessage').val().length;
-        var text_remaining = text_max - text_length;
+  $('#inputMessage').keyup(function() {
+      var text_length = $('#inputMessage').val().length;
+      var text_remaining = text_max - text_length;
 
-        $('#charCount').html(text_remaining + ' left');
+      $('#charCount').html(text_remaining + ' left');
+  });
+  $('#submit').click(function() {
+    var request = $.ajax({
+      url: "/contact",
+      type: "POST",
+      data: {email: $('#inputEmail').val(), message: $('#inputMessage').val()},
     });
-  })
+    
+    request.done(function(data) {
+      if (data.ok) {
+        inform('message sent!');
+        $('#inputMessage').val('')
+      };
+    });
+    
+    request.fail(function( jqXHR, textStatus ) {
+      inform( "Request failed: " + textStatus );
+    });
+    return false
+  });
+})
   </script>
 {% endblock %}

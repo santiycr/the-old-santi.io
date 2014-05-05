@@ -1,7 +1,18 @@
 from flask import Flask
-from flask import render_template
+from flask import render_template, request, jsonify
 from flask.templating import TemplateNotFound
+from google.appengine.api import mail
+
 app = Flask(__name__)
+
+
+@app.route('/contact', methods=['POST'])
+def contact():
+    mail.send_mail(sender=request.form['email'],
+                   to="santiycr@gmail.com",
+                   subject="Contact from santi.io",
+                   body=request.form['message'])
+    return jsonify(ok=True)
 
 
 @app.route('/')
