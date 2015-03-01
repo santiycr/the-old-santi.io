@@ -36,9 +36,9 @@
 
           <div class="masthead clearfix">
             <div class="inner">
-              <h2 class="masthead-brand">Santiago Suarez Ordo&ntilde;ez</h2>
+              <h2 class="masthead-brand"><a href="/">Santiago Suarez Ordo&ntilde;ez</a></h2>
               <ul class="nav masthead-nav">
-                {% for name in ['about', 'work', 'contact']: %}
+                {% for name in ['about', 'contact']: %}
                   <li {{ 'class=active' if request.path.endswith(name) else '' }}>
                     <a href="/{{ name }}">{{ name.capitalize() }}</a>
                   </li>
