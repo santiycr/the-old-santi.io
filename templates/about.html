@@ -1,0 +1,80 @@
+{% extends "layout.html" %}
+
+{% block head %}
+  <link rel="stylesheet" href="//blueimp.github.io/Gallery/css/blueimp-gallery.min.css">
+  <link rel="stylesheet" href="/static/css/about.css">
+{% endblock %}
+
+{% block content %}
+  <h2>About me</h2>
+  <br>
+  <p>
+  I'm an expat Argentinean, who moved to San Francisco to pursue love and fun
+  with my <a href="http://ashley.santi.io">new wife</a> and fellow
+  <a href="https://saucelabs.com">automated software testing friends</a>.
+  </p>
+  <p>
+  I work at Sauce Labs as a Senior Software Engineer, in charge of the Core
+  Infrastructure Team. As the first employee, I've held many roles over the
+  years, among them - Support/Sales Engineer, technical writer and speaker,
+  developer evangelist and my favorite official title: Sauce Ninja.
+  </p>
+  <p>
+  I love sailing, windsurfing, climbing and most recently, doing Crossfit.  I
+  chose software for a profession because it allows people to have a (hopefully
+  positive) impact using only their time and effort.
+  </p>
+  <br>
+  <div id="links">
+    <a href="/static/images/about/speaking.jpg" title="speaking" data-gallery>
+        <img class="about-thumb" src="/static/images/about/speaking.jpg" alt="speaking">
+    </a>
+    <a href="/static/images/about/climbing.jpg" title="climbing" data-gallery>
+        <img class="about-thumb" src="/static/images/about/climbing.jpg" alt="climbing">
+    </a>
+    <a href="/static/images/about/sailing.jpg" title="sailing" data-gallery>
+        <img class="about-thumb" src="/static/images/about/sailing.jpg" alt="sailing">
+    </a>
+    <a href="/static/images/about/wedding.jpg" title="wedding" data-gallery>
+        <img class="about-thumb" src="/static/images/about/wedding.jpg" alt="climbing">
+    </a>
+  </div>
+
+  <!-- The Bootstrap Image Gallery lightbox, should be a child element of the document body -->
+<div id="blueimp-gallery" class="blueimp-gallery" data-use-bootstrap-modal="false">
+    <!-- The container for the modal slides -->
+    <div class="slides"></div>
+    <!-- Controls for the borderless lightbox -->
+    <h3 class="title"></h3>
+    <a class="prev">‹</a>
+    <a class="next">›</a>
+    <a class="close">×</a>
+    <a class="play-pause"></a>
+    <ol class="indicator"></ol>
+    <!-- The modal dialog, which will be used to wrap the lightbox content -->
+    <div class="modal fade">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" aria-hidden="true">&times;</button>
+                    <h4 class="modal-title"></h4>
+                </div>
+                <div class="modal-body next"></div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-default pull-left prev">
+                        <i class="glyphicon glyphicon-chevron-left"></i>
+                        Previous
+                    </button>
+                    <button type="button" class="btn btn-primary next">
+                        Next
+                        <i class="glyphicon glyphicon-chevron-right"></i>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script src="//blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+<script src="js/bootstrap-image-gallery.min.js"></script>
+{% endblock %}
