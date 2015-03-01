@@ -1,0 +1,7 @@
+.cover {
+  background-color: hsla(300, 20%, 6%, 0.4);
+  padding: 15px;
+  display: inline-block;
+  border-radius: 7px;
+  text-align: left;
+}
